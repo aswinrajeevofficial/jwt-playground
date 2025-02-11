@@ -1,0 +1,96 @@
+body {
+   font-family: Inter, sans-serif;
+   line-height: 1.6;
+   color: #39FF14;
+   margin: 0;
+   padding: 20px;
+   background-color: #000000;
+}
+
+.container {
+   max-width: 800px;
+   margin: 0 auto;
+   background-color: #000;
+   padding: 20px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+   text-align: center;
+   color: #39FF14;
+}
+
+.tool-section {
+   margin-bottom: 30px;
+   padding: 20px;
+   background-color: #000;
+   border-radius: 5px;
+}
+
+textarea,
+input[type="text"],
+select {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 10px;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+textarea {
+   height: 100px;
+   resize: vertical;
+}
+
+button {
+   display: block;
+   width: 100%;
+   padding: 10px;
+   background-color: #3498db;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+   font-size: 16px;
+}
+
+pre {
+   background-color: #000;
+   border: 1px solid #39FF14;
+   border-radius: 20px;
+   border-radius: 4px;
+   padding: 10px;
+   white-space: pre-wrap;
+   word-wrap: break-word;
+}
+
+#result {
+   margin-top: 20px;
+}
+
+label {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: bold;
+}
+
+.container-3 {
+   margin-top: 20px;
+   padding: 20px;
+}
+
+#keyResult {
+   margin-top: 20px;
+}
+
+#privateKeyOutput,
+#publicKeyOutput {
+   white-space: pre-wrap;
+   word-break: break-all;
+   background-color: #000;
+   padding: 10px;
+}
+
+button {
+   color: black;
+   background-color: #39FF14;
+}

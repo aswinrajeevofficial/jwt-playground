@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JWT Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>JWT Playground</h1>
+      <div class="container-3">
+        <h1>Generate PEM Key Pair</h1>
+        <button id="generateKeys">Generate RSA Key Pair</button>
+        <div id="keyResult">
+          <h2>Private Key (PEM):</h2>
+          <pre id="privateKeyOutput"></pre>
+          <h2>Public Key (PEM):</h2>
+          <pre id="publicKeyOutput"></pre>
+        </div>
+      </div>
+
+      <div class="tool-section">
+        <h2>PEM to JWK Converter</h2>
+        <textarea
+          id="pemInput"
+          placeholder="Paste your PEM public key here"
+        ></textarea>
+        <input type="text" id="keyId" placeholder="Enter Key ID" />
+        <select id="algorithm">
+          <option value="RS256">RS256</option>
+          <option disabled value="RS384">RS384</option>
+          <option disabled value="RS512">RS512</option>
+          <option disabled value="ES256">ES256</option>
+          <option disabled value="ES384">ES384</option>
+          <option disabled value="ES512">ES512</option>
+        </select>
+        <button onclick="convertToJWK()">Convert to JWK</button>
+        <pre id="jwkOutput"></pre>
+      </div>
+
+      <div class="tool-section">
+        <h2>JWT Generator</h2>
+        <form id="jwtForm">
+          <label for="header">Header (JSON):</label>
+          <textarea id="header" required></textarea>
+
+          <label for="payload">Payload (JSON):</label>
+          <textarea id="payload" required></textarea>
+
+          <label for="privateKey">Private PEM Key:</label>
+          <textarea id="privateKey" required></textarea>
+
+          <label for="publicKey">Public PEM Key:</label>
+          <textarea id="publicKey" required></textarea>
+
+          <button type="submit">Generate JWT</button>
+        </form>
+
+        <div id="result">
+          <h3>Generated JWT:</h3>
+          <pre id="jwt"></pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.5.1/jsrsasign-all-min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

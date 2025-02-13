@@ -93,6 +93,21 @@
           </div>
          </div>
        </div>
+
+       <div class="tool-section">
+         <h2>JWT Verify with JWKS URI</h2>
+         <div id="jwtForm3">
+            <label for="jwtToken2">JWT Token:</label>
+            <textarea id="jwtToken2" required></textarea>
+            <label for="jwksJSON">JWKS JSON:</label>
+            <textarea id="jwksJSON" required></textarea>
+            <button onclick="decodeAndVerifyUsingJWKS()">Verify using JWKS</button>
+            <div id="decoded">
+               <h3>Verification Result:</h3>
+               <pre id="verification2"></pre>
+             </div>
+         </div>
+       </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.5.1/jsrsasign-all-min.js"></script>

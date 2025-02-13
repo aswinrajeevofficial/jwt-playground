@@ -94,3 +94,11 @@ button {
    color: black;
    background-color: #39FF14;
 }
+
+.error{
+   color: red;
+}
+
+.success{
+   color: green;
+}

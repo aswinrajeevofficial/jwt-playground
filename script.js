@@ -1,3 +1,35 @@
+function decodeAndVerify() {
+   try{
+      const token = document.getElementById("jwtToken").value;
+      const publicKey = document.getElementById("publicPEM").value;
+   
+      const [headerB64, payloadB64, signatureB64] = token.split(".");
+      const header = JSON.parse(window.atob(headerB64));
+      const payload = JSON.parse(window.atob(payloadB64));
+   
+      document.getElementById("decodedHeader").textContent = JSON.stringify(header, null, 2);
+      document.getElementById("decodedPayload").textContent = JSON.stringify(payload, null, 2);
+   
+      if(publicKey.trim()){
+         try{
+            const isValid = KJUR.jws.JWS.verify(token, publicKey, [header.alg]);
+            document.getElementById("verification").innerHTML = `<span class="${isValid ? 'success' : 'error'}">${isValid ? '&check; Signature Verified' : '&#10060; Invalid Signature'}</span>`;
+         }
+         catch(verifyError){
+            document.getElementById("verification").innerHTML = `<span class="error">Verification error: ${verifyError.message}</span>`
+         }
+      }
+      else{
+         document.getElementById("verification").textContent = "Please provide a public key to verify the signature";
+      }
+   }
+   catch(error){
+      document.getElementById("decodedHeader").textContent = "";
+      document.getElementById("decodedPayload").textContent = "";
+      document.getElementById("verification").innerHTML = `<span class="error">Error: ${error.message}</span>`
+   }
+}
+
 function convertToJWK() {
   const pemInput = document.getElementById("pemInput").value;
   const keyId = document.getElementById("keyId").value;

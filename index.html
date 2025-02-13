@@ -16,12 +16,12 @@
     <div class="container">
       <h1>JWT Playground</h1>
       <div class="container-3">
-        <h1>Generate PEM Key Pair</h1>
+        <h2>Generate PEM Key Pair</h2>
         <button id="generateKeys">Generate RSA Key Pair</button>
         <div id="keyResult">
-          <h2>Private Key (PEM):</h2>
+          <h3>Private Key (PEM):</h3>
           <pre id="privateKeyOutput"></pre>
-          <h2>Public Key (PEM):</h2>
+          <h3>Public Key (PEM):</h3>
           <pre id="publicKeyOutput"></pre>
         </div>
       </div>
@@ -68,6 +68,31 @@
           <pre id="jwt"></pre>
         </div>
       </div>
+
+      <div class="tool-section">
+         <h2>JWT Decoder & Verify</h2>
+         <div id="jwtForm2">
+           <label for="jwtToken">JWT Token:</label>
+           <textarea id="jwtToken" required></textarea>
+ 
+           <label for="publicPEM">Public PEM Key:</label>
+           <textarea id="publicPEM" required></textarea>
+ 
+           <label for="privatePEM">Private PEM Key:</label>
+           <textarea id="privatePEM" required></textarea>
+ 
+           <button onclick="decodeAndVerify()">Decode and Verify JWT</button>
+
+           <div id="decoded">
+            <h3>Header:</h3>
+            <pre id="decodedHeader"></pre>
+            <h3>Payload:</h3>
+            <pre id="decodedPayload"></pre>
+            <h3>Verification Result:</h3>
+            <pre id="verification"></pre>
+          </div>
+         </div>
+       </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.5.1/jsrsasign-all-min.js"></script>

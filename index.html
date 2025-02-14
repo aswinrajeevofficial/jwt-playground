@@ -95,12 +95,12 @@
        </div>
 
        <div class="tool-section">
-         <h2>JWT Verify with JWKS URI</h2>
+         <h2>JWT Verify with JWKS JSON</h2>
          <div id="jwtForm3">
             <label for="jwtToken2">JWT Token:</label>
             <textarea id="jwtToken2" required></textarea>
             <label for="jwksJSON">JWKS JSON:</label>
-            <textarea id="jwksJSON" required></textarea>
+            <textarea id="jwksJSON" placeholder="Paste the JWKS JSON from the JWKS URI here" required></textarea>
             <button onclick="decodeAndVerifyUsingJWKS()">Verify using JWKS</button>
             <div id="decoded">
                <h3>Verification Result:</h3>

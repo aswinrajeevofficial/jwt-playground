@@ -76,10 +76,7 @@
            <textarea id="jwtToken" required></textarea>
  
            <label for="publicPEM">Public PEM Key:</label>
-           <textarea id="publicPEM" required></textarea>
- 
-           <label for="privatePEM">Private PEM Key:</label>
-           <textarea id="privatePEM" required></textarea>
+           <textarea id="publicPEM" placeholder="You don't require a public key for decoding. It's only required to verify the token."></textarea>
  
            <button onclick="decodeAndVerify()">Decode and Verify JWT</button>
 
